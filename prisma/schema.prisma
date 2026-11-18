@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+model Product {
+  id             Int      @id @default(autoincrement())
+  proname        String
+  proprice       Float
+  proquantity    Int
+  prodescription String
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
